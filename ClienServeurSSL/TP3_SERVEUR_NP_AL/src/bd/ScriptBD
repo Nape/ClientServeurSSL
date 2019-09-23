@@ -1,0 +1,61 @@
+
+-- -----------------------------------------------------
+-- User     : root
+-- Password : root
+-- SCHEMA   : BDTP3
+-- -----------------------------------------------------
+
+
+-- -----------------------------------------------------
+--                CMD UTILE TESTS
+-- -----------------------------------------------------
+    ALTER TABLE BDTP3.CLIENT AUTO_INCREMENT = 1;
+-- -----------------------------------------------------
+
+
+
+-- -----------------------------------------------------
+--                 SCHEMA BDTP3
+-- -----------------------------------------------------
+
+CREATE SCHEMA IF NOT EXISTS `BDTP3` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci ;
+USE `BDTP3` ;
+
+-- -----------------------------------------------------
+--                 TABLE EMPLOYES
+-- -----------------------------------------------------
+create table EMPLOYE
+(
+    ID int auto_increment,
+    NOM varchar(20) not null,
+    PASSWORD varchar(20) not null,
+    constraint EMPLOYE_pk
+        primary key (ID)
+);
+
+-- -----------------------------------------------------
+--                 TABLE CLIENTS
+-- -----------------------------------------------------
+create table CLIENT
+(
+    ID int auto_increment,
+    NOM VARCHAR(20) not null,
+    PRENOM VARCHAR(20) not null,
+    constraint CLIENT_pk
+        primary key (ID)
+);
+
+-- -----------------------------------------------------
+--                 TABLE RESERVATIONS
+-- -----------------------------------------------------
+create table RESERVATION
+(
+    ID int auto_increment,
+    ARRIVEE DATE not null,
+    DEPART DATE not null,
+    COMMENTAIRE TEXT null,
+    ID_CLIENT int not null,
+    ID_EMPLOYE int null,
+    constraint RESERVATION_pk
+        primary key (ID)
+);

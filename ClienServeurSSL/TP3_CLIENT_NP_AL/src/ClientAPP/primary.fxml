@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<TabPane fx:id="mainTabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="813.0" prefWidth="830.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ClientAPP.PrimaryController">
+  <tabs>
+    <Tab fx:id="tabLogin" text="Login">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="tfNomUtilisateur" layoutX="332.0" layoutY="255.0" promptText="Nom utilisateur" />
+                  <TextField fx:id="tfMotDePasse" layoutX="332.0" layoutY="302.0" promptText="Mot de passe" />
+                  <Label fx:id="labelLogin" layoutX="372.0" layoutY="189.0" text="Login">
+                     <font>
+                        <Font name="System Bold" size="34.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnLogin" layoutX="386.0" layoutY="365.0" mnemonicParsing="false" onAction="#login" text="Login" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab fx:id="tabReservation" text="Réservation">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="740.0" prefWidth="830.0">
+               <children>
+                  <ListView fx:id="listViewReservation" layoutX="26.0" layoutY="413.0" prefHeight="335.0" prefWidth="779.0" />
+                  <DatePicker fx:id="datePickerArrive" layoutX="66.0" layoutY="55.0" prefHeight="27.0" prefWidth="145.0" />
+                  <DatePicker fx:id="datePickerDepart" layoutX="66.0" layoutY="117.0" prefHeight="27.0" prefWidth="145.0" />
+                  <Label layoutX="113.0" layoutY="37.0" text="Arrivée" />
+                  <Label layoutX="114.0" layoutY="99.0" text="Départ" />
+                  <TextArea fx:id="textAreaCommentaire" layoutX="67.0" layoutY="179.0" prefHeight="84.0" prefWidth="295.0" promptText="Commentaires" />
+                  <Label layoutX="273.0" layoutY="37.0" text="ID Employé" />
+                  <Button fx:id="btnReserve" layoutX="68.0" layoutY="280.0" mnemonicParsing="false" onAction="#reserver" prefHeight="49.0" prefWidth="295.0" text="Réserver">
+                     <font>
+                        <Font size="26.0" />
+                     </font>
+                  </Button>
+                  <Separator layoutY="353.0" prefHeight="9.0" prefWidth="830.0" />
+                  <Label layoutX="28.0" layoutY="380.0" text="Liste des réservations">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnChargeListeReservation" layoutX="214.0" layoutY="378.0" mnemonicParsing="false" onAction="#chargerListReservation" prefHeight="27.0" prefWidth="215.0" text="Charger la liste de réservation" />
+                  <TextField fx:id="tfClientReservation" layoutX="254.0" layoutY="117.0" prefHeight="27.0" prefWidth="108.0" />
+                  <TextField fx:id="tfIdEmployeReservation" layoutX="254.0" layoutY="55.0" prefHeight="27.0" prefWidth="107.0" />
+                  <Label layoutX="281.0" layoutY="99.0" text="ID Client" />
+                  <Separator layoutX="412.0" orientation="VERTICAL" prefHeight="357.0" prefWidth="6.0" />
+                  <Label layoutX="515.0" layoutY="37.0" text="Arrivée" />
+                  <DatePicker fx:id="datePickerArriveM" layoutX="465.0" layoutY="55.0" prefHeight="27.0" prefWidth="145.0" />
+                  <DatePicker fx:id="datePickerDepartM" layoutX="465.0" layoutY="117.0" prefHeight="27.0" prefWidth="145.0" />
+                  <Label layoutX="678.0" layoutY="37.0" text="ID Employé" />
+                  <TextField fx:id="tfIdEmployeReservationM" layoutX="652.0" layoutY="55.0" prefHeight="27.0" prefWidth="107.0" />
+                  <Label layoutX="517.0" layoutY="99.0" text="Départ" />
+                  <Label layoutX="687.0" layoutY="99.0" text="ID Client" />
+                  <TextField fx:id="tfClientReservationM" layoutX="652.0" layoutY="117.0" prefHeight="27.0" prefWidth="108.0" />
+                  <TextArea fx:id="textAreaCommentaireM" layoutX="465.0" layoutY="179.0" prefHeight="84.0" prefWidth="295.0" promptText="Commentaires" />
+                  <Button fx:id="btnModifierReservation" layoutX="465.0" layoutY="280.0" mnemonicParsing="false" onAction="#modifierReservation" prefHeight="49.0" prefWidth="127.0" text="Modifier">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnSupprimerReservation" layoutX="600.0" layoutY="280.0" mnemonicParsing="false" onAction="#supprimerReservation" prefHeight="49.0" prefWidth="161.0" text="Supprimer">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="465.0" layoutY="162.0" text="ID Reservation:" />
+                  <Label fx:id="lblIdReservation" layoutX="559.0" layoutY="162.0" text="Label" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab fx:id="tabClient" text="Clients">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Separator layoutY="290.0" prefHeight="9.0" prefWidth="830.0" />
+                  <ListView fx:id="listViewClient" layoutX="26.0" layoutY="349.0" prefHeight="335.0" prefWidth="779.0" />
+                  <Label layoutX="28.0" layoutY="316.0" text="Liste des clients">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tfPrenomClient" layoutX="70.0" layoutY="104.0" />
+                  <TextField fx:id="tfNomClient" layoutX="70.0" layoutY="163.0" />
+                  <Button fx:id="btnAjouterClient" layoutX="253.0" layoutY="105.0" mnemonicParsing="false" onAction="#ajouterClient" prefHeight="85.0" prefWidth="80.0" text="Ajouter" />
+                  <Separator layoutX="413.0" orientation="VERTICAL" prefHeight="294.0" prefWidth="6.0" />
+                  <TextField fx:id="tfModifPrenomClient" layoutX="490.0" layoutY="104.0" />
+                  <TextField fx:id="tfModifNomClient" layoutX="490.0" layoutY="163.0" />
+                  <Button fx:id="btnModifierClient" layoutX="673.0" layoutY="105.0" mnemonicParsing="false" onAction="#modifierClient" prefHeight="27.0" prefWidth="87.0" text="Modifier" />
+                  <Label layoutX="154.0" layoutY="49.0" text="Nouveau client">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="565.0" layoutY="49.0" text="Client existant">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btnChargeListeClient" layoutX="178.0" layoutY="314.0" mnemonicParsing="false" onAction="#chargerListeClient" text="Charger la liste de clients" />
+                  <Button fx:id="btnSupprimerClient" layoutX="673.0" layoutY="163.0" mnemonicParsing="false" onAction="#supprimerClient" prefHeight="27.0" prefWidth="87.0" text="Supprimer" />
+                  <Label layoutX="490.0" layoutY="204.0" text="ID :" />
+                  <Label fx:id="lblIDClient" layoutX="511.0" layoutY="204.0" />
+               </children>
+            </AnchorPane>
+         </content>
+      </Tab>
+      <Tab fx:id="tabLogout" text="Logout">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="btnLogout" layoutX="348.0" layoutY="356.0" mnemonicParsing="false" onAction="#logout" prefHeight="69.0" prefWidth="135.0" text="Logout">
+                     <font>
+                        <Font size="27.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
